@@ -133,6 +133,7 @@ select_plot.ICS_crit <- function(object, type = c("dots", "lines"),
 df_select_plot <- function(object, select = NULL, scale = FALSE,
                            screeplot = TRUE) UseMethod("df_select_plot")
 
+#' @noRd
 df_select_plot.ICS <- function(object, select = NULL, scale = FALSE, 
                                screeplot = TRUE) {
   
@@ -280,7 +281,7 @@ discriminatory_plot <- function(object,  size = 3, color = "lightblue"){
 #' or an invariant coordinate system obtained via an ICS transformation with 
 #' densities on the diagonal for each cluster.
 #' 
-#' @param object a dataframe or \code{\link[=ICS-S3]{ICS}} class object.
+#' @param object a dataframe or \code{\link[ICS]{ICS-S3}} class object.
 #' @param select a vector of indexes of variables to plot. If `NULL` or 
 #' `FALSE`, all variables are selected. If `TRUE` only the first three and 
 #' last three are considered.
@@ -360,6 +361,7 @@ component_plot <- function(object, select = TRUE,
 #' @noRd
 df_component_plot <- function(object, select = NULL) UseMethod("df_component_plot")
 
+#' @noRd
 df_component_plot.default <- function(object, select = NULL){
   data.frame()
 }

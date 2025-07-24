@@ -1,11 +1,11 @@
 Package: ICSClust
 Type: Package
 Title: Tandem Clustering with Invariant Coordinate Selection
-Version: 0.1.0
-Date: 2023-09-20
+Version: 0.1.1
+Date: 2025-07-24
 Description: Implementation of tandem clustering with invariant coordinate 
               selection with different scatter matrices and several choices for the 
-              selection of components as described in Alfons, A., Archimbaud, A., Nordhausen, K.and Ruiz-Gazen, A. (2022) <arXiv:2212.06108>.
+              selection of components as described in Alfons, A., Archimbaud, A., Nordhausen, K.and Ruiz-Gazen, A. (2024) <doi:10.1016/j.ecosta.2024.03.002>.
 License: GPL (>= 3)
 Encoding: UTF-8
 Depends: ICS (>= 1.4-0), ggplot2
@@ -32,14 +32,15 @@ Authors@R:
              email = "anne.ruiz-gazen@tse-fr.eu",
              role = "aut", 
              comment = c(ORCID = "0000-0001-8970-8061")))
-Author: Aurore Archimbaud [aut, cre] (<https://orcid.org/0000-0002-6511-9091>),
-  Andreas Alfons [aut] (<https://orcid.org/0000-0002-2513-3788>),
-  Klaus Nordhausen [aut] (<https://orcid.org/0000-0002-3758-8501>),
-  Anne Ruiz-Gazen [aut] (<https://orcid.org/0000-0001-8970-8061>)
+Author: Aurore Archimbaud [aut, cre] (ORCID:
+    <https://orcid.org/0000-0002-6511-9091>),
+  Andreas Alfons [aut] (ORCID: <https://orcid.org/0000-0002-2513-3788>),
+  Klaus Nordhausen [aut] (ORCID: <https://orcid.org/0000-0002-3758-8501>),
+  Anne Ruiz-Gazen [aut] (ORCID: <https://orcid.org/0000-0001-8970-8061>)
 Maintainer: Aurore Archimbaud <aurore.archimbaud@live.fr>
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2
 Config/testthat/edition: 3
 NeedsCompilation: yes
-Packaged: 2023-09-20 16:53:56 UTC; auror
+Packaged: 2025-07-24 20:01:39 UTC; a.archimbaud
 Repository: CRAN
-Date/Publication: 2023-09-21 13:20:02 UTC
+Date/Publication: 2025-07-24 20:20:02 UTC

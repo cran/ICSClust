@@ -13,7 +13,7 @@ component_plot(
 )
 }
 \arguments{
-\item{object}{a dataframe or \code{\link[=ICS-S3]{ICS}} class object.}
+\item{object}{a dataframe or \code{\link[ICS]{ICS-S3}} class object.}
 
 \item{select}{a vector of indexes of variables to plot. If \code{NULL} or
 \code{FALSE}, all variables are selected. If \code{TRUE} only the first three and

@@ -54,9 +54,10 @@ out <- ICS(X)
 med_crit(out, nb_select = 2, select_only = FALSE)
 }
 \references{
-Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022).
+Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024).
 Tandem clustering with invariant coordinate selection.
-\emph{arXiv preprint arXiv:2212.06108}..
+Econometrics and Statistics.
+\doi{10.1016/j.ecosta.2024.03.002}.
 }
 \seealso{
 \code{\link[=normal_crit]{normal_crit()}}, \code{\link[=var_crit]{var_crit()}}, \code{\link[=discriminatory_crit]{discriminatory_crit()}}.

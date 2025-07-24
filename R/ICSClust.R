@@ -1,7 +1,7 @@
 #' Tandem clustering with ICS
 #' 
 #' Sequential clustering approach: (i) dimension reduction through the Invariant 
-#' Coordinate Selection method using the \code{\link[=ICS-S3]{ICS}} function and (ii)
+#' Coordinate Selection method using the \code{\link[ICS]{ICS-S3}} function and (ii)
 #' clustering of the transformed data. 
 #'
 #' @param X a numeric matrix or data frame containing the data.
@@ -34,7 +34,7 @@
 #' @details
 #' Tandem clustering with ICS is a sequential method:
 #' 
-#' - \code{\link[=ICS-S3]{ICS}} is performed.
+#' - \code{\link[ICS]{ICS-S3}} is performed.
 #' 
 #' - only a subset of the first and/or the last few components are
 #'  selected based on a criterion.
@@ -48,7 +48,7 @@
 #' @return  
 #' An object of class `"ICSClust"` with the following components:
 #' - `ICS_out`: An object of class \code{"ICS"}. 
-#' See \code{\link[=ICS-S3]{ICS}}
+#' See \code{\link[ICS]{ICS-S3}}.
 #' - `select`: a vector of the names of the selected invariant
 #'  coordinates.
 #' - `clusters`: a vector of the new partition of the data, i.e a vector
@@ -58,16 +58,17 @@
 #' [summary()][summary.ICSClust()] and [plot()][plot.ICSClust()] methods are available.
 #'  
 #' @references
-#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022). 
+#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024). 
 #' Tandem clustering with invariant coordinate selection. 
-#'  \emph{arXiv preprint arXiv:2212.06108}..
+#' Econometrics and Statistics.
+#'  \doi{10.1016/j.ecosta.2024.03.002}.
 #' 
 #' @export
 #' 
 #' @author Aurore Archimbaud
 #' 
 #' @seealso [med_crit()], [normal_crit()], 
-#' [var_crit()], \link[=ICS-S3]{ICS}, 
+#' [var_crit()], \code{\link[ICS]{ICS-S3}}, 
 #' [discriminatory_crit()], [kmeans_clust()],
 #' [tkmeans_clust()], [pam_clust()],
 #' [rimle_clust()], [mclust_clust()]

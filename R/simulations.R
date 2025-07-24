@@ -33,9 +33,10 @@
 #' @author Aurore Archimbaud
 #' 
 #' @references
-#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022). 
+#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024). 
 #' Tandem clustering with invariant coordinate selection. 
-#'  \emph{arXiv preprint arXiv:2212.06108}..
+#' Econometrics and Statistics.
+#'  \doi{10.1016/j.ecosta.2024.03.002}.
 #' 
 #' @examples
 #' X <- mixture_sim()
@@ -126,9 +127,10 @@ mixture_sim = function(pct_clusters = c(0.5,0.5) , n = 500, p = 10, delta = 10){
 #' @export
 #' 
 #' @references
-#' #' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022). 
+#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024). 
 #' Tandem clustering with invariant coordinate selection. 
-#' \emph{arXiv preprint arXiv:2212.06108}.
+#' Econometrics and Statistics.
+#'  \doi{10.1016/j.ecosta.2024.03.002}.
 
 runif_outside_range <- function(n, min = 0, max = 1, mult = 2) {
   # check number of observations

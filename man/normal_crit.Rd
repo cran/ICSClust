@@ -85,9 +85,10 @@ normal_crit(out, level = 0.1, select_only = FALSE)
 
 }
 \references{
-Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022).
+Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024).
 Tandem clustering with invariant coordinate selection.
-\emph{arXiv preprint arXiv:2212.06108}..
+Econometrics and Statistics.
+\doi{10.1016/j.ecosta.2024.03.002}.
 
 Archimbaud, A., Nordhausen, K., and Ruiz-Gazen, A. (2018).
 ICSOutlier: Unsupervised Outlier Detection for Low-Dimensional Contamination Structure,
@@ -99,8 +100,8 @@ R package version 0.3-0
 }
 \seealso{
 \code{\link[=med_crit]{med_crit()}}, \code{\link[=var_crit]{var_crit()}}, \code{\link[=discriminatory_crit]{discriminatory_crit()}},
-\code{\link[=jarque.test]{jarque.test()}}, \code{\link[=anscombe.test]{anscombe.test()}},
-\code{\link[=bonett.test]{bonett.test()}}, \code{\link[=agostino.test]{agostino.test()}}, \code{\link[stats:shapiro.test]{stats::shapiro.test()}}.
+\code{\link[moments:jarque.test]{moments::jarque.test()}}, \code{\link[moments:anscombe.test]{moments::anscombe.test()}},
+\code{\link[moments:bonett.test]{moments::bonett.test()}}, \code{\link[moments:agostino.test]{moments::agostino.test()}}, \code{\link[stats:shapiro.test]{stats::shapiro.test()}}.
 }
 \author{
 Andreas Alfons, Aurore Archimbaud, Klaus Nordhausen and Anne Ruiz-Gazen

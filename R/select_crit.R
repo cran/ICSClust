@@ -42,9 +42,10 @@
 #' 
 #' 
 #' @references
-#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022). 
+#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024). 
 #' Tandem clustering with invariant coordinate selection. 
-#'  \emph{arXiv preprint arXiv:2212.06108}..
+#' Econometrics and Statistics.
+#'  \doi{10.1016/j.ecosta.2024.03.002}.
 #' 
 #' Archimbaud, A., Nordhausen, K., and Ruiz-Gazen, A. (2018). 
 #' ICSOutlier: Unsupervised Outlier Detection for Low-Dimensional Contamination Structure, 
@@ -55,8 +56,8 @@
 #' R package version 0.3-0
 #' 
 #' @seealso [med_crit()], [var_crit()], [discriminatory_crit()],
-#'  [jarque.test()], [anscombe.test()], 
-#' [bonett.test()], [agostino.test()], [stats::shapiro.test()].
+#'  [moments::jarque.test()], [moments::anscombe.test()], 
+#' [moments::bonett.test()], [moments::agostino.test()], [stats::shapiro.test()].
 #'
 #' @author Andreas Alfons, Aurore Archimbaud, Klaus Nordhausen and Anne Ruiz-Gazen
 #' 
@@ -208,9 +209,10 @@ normal_crit.default <- function(object, level = 0.05,
 #' @rdname med_crit
 #' 
 #' @references
-#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022). 
+#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024). 
 #' Tandem clustering with invariant coordinate selection. 
-#'  \emph{arXiv preprint arXiv:2212.06108}..
+#' Econometrics and Statistics.
+#'  \doi{10.1016/j.ecosta.2024.03.002}.
 #' 
 #' @seealso [normal_crit()], [var_crit()], [discriminatory_crit()].
 #'
@@ -294,9 +296,10 @@ med_crit.default <- function(object, nb_select = NULL, select_only = FALSE, ...)
 #' 
 #' @export
 #' @references
-#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022). 
+#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024). 
 #' Tandem clustering with invariant coordinate selection. 
-#'  \emph{arXiv preprint arXiv:2212.06108}..
+#' Econometrics and Statistics.
+#'  \doi{10.1016/j.ecosta.2024.03.002}.
 #' 
 #' Radojicic, U., & Nordhausen, K. (2019). 
 #' Non-gaussian component analysis: Testing the dimension of the signal subspace.
@@ -389,7 +392,9 @@ fixOrder <- function (x, nb_spherical)
 #' Selection of ICS components based on discriminatory power
 #' 
 #' Identifies invariant coordinates associated to the highest discriminatory 
-#' power (by default "eta2").
+#' power. Currently, the implemented measure is "eta2" as quantified by the
+#'  Wilks' partial eta-squared, computed using the [heplots::etasq()]
+#'   function.
 #'
 #' @param object dataframe or object of class `"ICS"`.
 #' @param clusters a vector of the same length as the number of
@@ -406,18 +411,20 @@ fixOrder <- function (x, nb_spherical)
 #' @param \dots  additional arguments are currently ignored.
 #'
 #' @details
-#' The discriminatory power \eqn{\eta^{2} = 1 - \Lambda}, where \eqn{\Lambda}  
-#' denotes Wilks' lambda, is evaluated for each combination of the
+#' The discriminatory power is evaluated for each combination of the
 #'  first and/or last combinations of `nb_select` components. The combination
 #'  achieving the highest discriminatory power is selected.
 #'  
-#' More specifically, we compute
+#' More specifically, we compute \eqn{\eta^{2} = 1 - \Lambda^{1/s}}, where \eqn{\Lambda}  
+#' denotes Wilks' lambda: 
 #' \deqn{
-#' \eta^{2} = 1 - \frac{\det(E)}{\det(T)},
+#' \Lambda = \frac{\det(E)}{\det(T)},
 #' }
-#' where \eqn{E} is the within-group sum of squares and cross-products matrix
-#' and \eqn{T} is the total sum of squares and cross-products matrix.
-#' 
+#' where \eqn{E} is the within-group sum of squares and cross-products matrix,
+#' \eqn{H} is the between-group sum of squares and cross-products matrix and 
+#'  \eqn{T} is the total sum of squares and cross-products matrix, with 
+#' \eqn{T = H + E},  \eqn{s=min(p, df_h)} with \eqn{p} being the number of
+#'  latent roots of \eqn{HE^{-1}}. See [heplots::etasq()] for more details.
 #'
 #' @return If `select_only` is `TRUE` a vector of the names of the invariant
 #'  components or variables to select. 
@@ -438,11 +445,16 @@ fixOrder <- function (x, nb_spherical)
 #' @rdname discriminatory_crit
 #' 
 #' @references
-#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022). 
+#' Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024). 
 #' Tandem clustering with invariant coordinate selection. 
-#'  \emph{arXiv preprint arXiv:2212.06108}..
+#' Econometrics and Statistics.
+#'  \doi{10.1016/j.ecosta.2024.03.002}.
+#'  
+#' Muller, K. E. and Peterson, B. L. (1984). Practical methods for
+#' computing power in testing the Multivariate General Linear Hypothesis
+#' \emph{Computational Statistics and Data Analysis}, \bold{2}, 143-158.
 #' 
-#' @seealso [normal_crit()], [med_crit()], [var_crit()].
+#' @seealso [normal_crit()], [med_crit()], [var_crit()], [heplots::etasq()].
 #'
 #' @author Aurore Archimbaud and Anne Ruiz-Gazen
 #' @import ICS

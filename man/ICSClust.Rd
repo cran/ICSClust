@@ -57,7 +57,7 @@ discriminatory criterion \code{\link{discriminatory_crit}}.}
 An object of class \code{"ICSClust"} with the following components:
 \itemize{
 \item \code{ICS_out}: An object of class \code{"ICS"}.
-See \code{\link[=ICS-S3]{ICS}}
+See \code{\link[ICS]{ICS-S3}}.
 \item \code{select}: a vector of the names of the selected invariant
 coordinates.
 \item \code{clusters}: a vector of the new partition of the data, i.e a vector
@@ -69,13 +69,13 @@ observation is allocated. 0 indicates outlying observations.
 }
 \description{
 Sequential clustering approach: (i) dimension reduction through the Invariant
-Coordinate Selection method using the \code{\link[=ICS-S3]{ICS}} function and (ii)
+Coordinate Selection method using the \code{\link[ICS]{ICS-S3}} function and (ii)
 clustering of the transformed data.
 }
 \details{
 Tandem clustering with ICS is a sequential method:
 \itemize{
-\item \code{\link[=ICS-S3]{ICS}} is performed.
+\item \code{\link[ICS]{ICS-S3}} is performed.
 \item only a subset of the first and/or the last few components are
 selected based on a criterion.
 \item the clustering method is performed only on the subspace
@@ -112,13 +112,14 @@ summary(out)
 plot(out)
 }
 \references{
-Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2022).
+Alfons, A., Archimbaud, A., Nordhausen, K., & Ruiz-Gazen, A. (2024).
 Tandem clustering with invariant coordinate selection.
-\emph{arXiv preprint arXiv:2212.06108}..
+Econometrics and Statistics.
+\doi{10.1016/j.ecosta.2024.03.002}.
 }
 \seealso{
 \code{\link[=med_crit]{med_crit()}}, \code{\link[=normal_crit]{normal_crit()}},
-\code{\link[=var_crit]{var_crit()}}, \link[=ICS-S3]{ICS},
+\code{\link[=var_crit]{var_crit()}}, \code{\link[ICS]{ICS-S3}},
 \code{\link[=discriminatory_crit]{discriminatory_crit()}}, \code{\link[=kmeans_clust]{kmeans_clust()}},
 \code{\link[=tkmeans_clust]{tkmeans_clust()}}, \code{\link[=pam_clust]{pam_clust()}},
 \code{\link[=rimle_clust]{rimle_clust()}}, \code{\link[=mclust_clust]{mclust_clust()}}
